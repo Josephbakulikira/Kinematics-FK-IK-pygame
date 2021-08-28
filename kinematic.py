@@ -2,11 +2,24 @@ import pygame
 from constants import *
 from Arm import Arm
 
+class Kinematic:
+    def __init__(self, FK=None, IK=None):
+        self.FK = FK
+        self.IK = IK
+        # 0 -> Inverse Kinematic , 1 -> Forward Kinematic
+        self.SelectedMode = 0
+
+    def AppendArm(self, length):
+        self.FK.Append(length)
+        self.IK.Append(length)
+
+
 class ForwardKinematic:
     def __init__(self, position, arms=[], lastArm=None):
         self.position = position
         self.arms = arms
         self.lastArm = lastArm
+
 
     def Append(self, length):
         arm = Arm([0, 0], length, 0)
