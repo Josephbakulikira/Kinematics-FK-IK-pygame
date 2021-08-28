@@ -37,6 +37,7 @@ class Arm(object):
         if self.parent != None:
             self.parent.drag(self.position)
 
-    def Show(self, screen):
+    def Show(self, screen, ShowCircle):
         pygame.draw.line(screen, self.color, self.position, self.getPosition(), self.ArmStroke)
-        pygame.draw.circle(screen, (255, 205, 25), self.position, 10)
+        if ShowCircle:
+            pygame.draw.circle(screen, (255, 205, 25), self.position, 10)

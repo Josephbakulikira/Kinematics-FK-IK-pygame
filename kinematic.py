@@ -41,9 +41,9 @@ class ForwardKinematic:
     def RotateArm(self, index, angle):
         self.arms[index].angle = angle
 
-    def Show(self, screen):
+    def Show(self, screen, ShowCircle):
         for i, arm in enumerate(self.arms):
-            arm.Show(screen)
+            arm.Show(screen, ShowCircle)
 
 class InverseKinematic:
     def __init__(self, position, arms=[], lastArm=None):
@@ -64,6 +64,6 @@ class InverseKinematic:
     def Drag(self, target):
         self.lastArm.drag(target)
 
-    def Show(self, screen):
+    def Show(self, screen, ShowCircle):
         for arm in self.arms:
-            arm.Show(screen)
+            arm.Show(screen, ShowCircle)
