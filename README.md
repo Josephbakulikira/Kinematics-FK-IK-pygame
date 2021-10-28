@@ -4,7 +4,7 @@
 
 ---
 ### Requirements
-    > `Pygame` -> pip install pygame
+> `Pygame` -> pip install pygame
 ---
 ### Controls
 `ESC`    to close the window
